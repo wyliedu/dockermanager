@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wylie.manager.mapper.AppBannerMapper">
+  <resultMap id="BaseResultMap" type="wylie.manager.entity.AppBanner">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="enable" jdbcType="BIT" property="enable" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="link_url" jdbcType="VARCHAR" property="linkUrl" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, url, enable, sort, link_url, title, content
+  </sql>
+
+  <select id="getAppBannerList" resultType="wylie.manager.entity.AppBanner">
+    SELECT * FROM app_banner WHERE enable=1 ORDER BY sort ASC
+  </select>
+</mapper>
